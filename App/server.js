@@ -127,7 +127,7 @@ apiRouter.get('/', (req, res) => {
 apiRouter.route('/emails/email/query')
 	.get((req,res)=> {
 		let emailString = req.query.email;
-		Email.find({"email":{"$regex": emailString}},(err,movies) => {
+		Email.find({"email":{"$regex": emailString}},(err,emails) => {
 			if (err) res.send(err);
 			res.json(emails);
 		})
